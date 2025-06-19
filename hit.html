@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ramon A. Mufutau | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/main.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f4f6fb;
+      color: #111;
+      scroll-behavior: smooth;
+    }
+    nav {
+      background: #fff;
+      position: sticky;
+      top: 0;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      z-index: 1000;
+    }
+    nav ul {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #003366;
+      font-weight: 600;
+    }
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #3c8ce7, #00eaff);
+      color: white;
+      margin-right: 15%;
+      margin-left: 15%;
+      padding: 3rem 2rem 6rem;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      margin-bottom: 1rem;
+    }
+    .hero .name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    .hero .role {
+      font-size: 1.1rem;
+      margin: 0.3rem 0 0.8rem;
+    }
+    .certified {
+      display: inline-block;
+      margin-left: 0.5rem;
+      font-size: 0.75rem;
+      background: #00e676;
+      color: black;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+    .tech-stack {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      text-align: right;
+    }
+    .tech-stack p {
+      margin: 0;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    .tech-stack a {
+      background: white;
+      color: #003366;
+      padding: 0.5rem;
+      border-radius: 50%;
+      margin-left: 0.3rem;
+      display: inline-block;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+      position: relative;
+    }
+    .tech-stack a:hover {
+      background: #003366;
+      color: white;
+      transform: scale(1.1);
+    }
+    .tech-stack a::after {
+      content: attr(data-label);
+      position: absolute;
+      top: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #003366;
+      color: #fff;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease-in-out;
+    }
+    .tech-stack a:hover::after {
+      opacity: 1;
+    }
+    .highlight-container {
+      max-width: 1050px;
+      margin: -4rem auto 2rem;
+      background: #eaeef3;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+      position: relative;
+      z-index: 10;
+    }
+    .highlight-container h3 {
+      margin: 0 0 1rem;
+      color: #555;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .highlight-track {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .highlight-box {
+      background: #fff;
+      padding: 1rem;
+      flex: 1;
+      min-width: 220px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+      text-align: left;
+    }
+    .highlight-box:hover {
+      transform: translateY(-3px);
+    }
+    .highlight-box a {
+      text-decoration: none;
+      color: #111;
+      display: block;
+    }
+    .highlight-box .label {
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 0.3rem;
+    }
+    .highlight-box .title {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    /* WORK SECTION GRID */
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .work-card {
+        position: relative;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        transition: transform 0.2s;
+        text-decoration: none !important;
+        color: inherit;
+        min-height: 180px; /* ADJUST HEIGHT HERE */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      
+    .work-card h3 {
+      font-size: 1.1rem;
+      margin: 0;
+      color: #111;
+    }
+
+    .work-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .work-card.light {
+      background: #63b3ed;
+      color: #000;
+    }
+
+    .work-card.dark {
+      background: #1e293b;
+      color: #fff;
+    }
+
+    .badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #e2e8f0;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.7rem;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    .badge.track {
+      background: #3b82f6;
+      color: #fff;
+    }
+
+    .badge.project {
+      background: #60a5fa;
+      color: #fff;
+    }
+
+    .badge.datalab {
+      background: #38bdf8;
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div><strong>Ramon Mufutau</strong></div>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="tech-stack">
+      <p>TECHNOLOGIES</p>
+      <a href="https://www.python.org" target="_blank" data-label="Python"><i class="fab fa-python"></i></a>
+      <a href="https://www.w3schools.com/sql/" target="_blank" data-label="SQL"><i class="fas fa-database"></i></a>
+      <a href="https://git-scm.com/" target="_blank" data-label="Git"><i class="fab fa-git-alt"></i></a>
+      <a href="https://en.wikipedia.org/wiki/Command-line_interface" target="_blank" data-label="Terminal"><i class="fas fa-terminal"></i></a>
+    </div>
+    <img src="images/profile.jpg" alt="Profile" class="profile-img">
+    <h1 class="name">Ramon A. Mufutau <span class="certified">CERTIFIED</span></h1>
+    <p class="role">PhD Candidate | Data Scientist | Developer</p>
+    <p><em>Data virtuoso, playing the strings of information to create harmonious insights.</em></p>
+  </header>
+
+  <div class="highlight-container">
+    <h3>My Portfolio Highlights</h3>
+    <div class="highlight-track">
+      <div class="highlight-box">
+        <a href="#">
+          <div class="label">My New Track</div>
+          <div class="title">Data Engineer</div>
+        </a>
+      </div>
+      <div class="highlight-box">
+        <a href="#">
+          <div class="label">My New Track</div>
+          <div class="title">Python Programming</div>
+        </a>
+      </div>
+      <div class="highlight-box">
+        <a href="#">
+          <div class="label">My New Track</div>
+          <div class="title">Importing & Cleaning Data</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  
+  <section id="work">
+    <h2>My Work</h2>
+    <p>Take a look at my latest work.</p>
+    <div class="work-grid">
+      <a href="https://example.com/bitcoin-project" class="work-card light" target="_blank">
+        <span class="badge datalab">DataLab</span>
+        <h3>Exploring the Bitcoin Cryptocurrency Market</h3>
+      </a>
+      <a href="https://example.com/data-engineer" class="work-card dark" target="_blank">
+        <span class="badge track">Track</span>
+        <h3>Data Engineer</h3>
+      </a>
+      <a href="https://example.com/data-manipulation" class="work-card light" target="_blank">
+        <span class="badge track">Track</span>
+        <h3>Data Manipulation</h3>
+      </a>
+      <a href="https://example.com/python-fundamentals" class="work-card dark" target="_blank">
+        <span class="badge track">Track</span>
+        <h3>Python Fundamentals</h3>
+      </a>
+      <a href="https://example.com/carbon-emissions" class="work-card light" target="_blank">
+        <span class="badge project">Project</span>
+        <h3>Analyzing Industry Carbon Emissions</h3>
+      </a>
+      <a href="https://example.com/bank-campaign" class="work-card dark" target="_blank">
+        <span class="badge project">Project</span>
+        <h3>Cleaning Bank Marketing Campaign Data</h3>
+      </a>
+    </div>
+  </section>  
+
+  <section id="certifications">
+    <h2>My Certifications</h2>
+    <p>These are the industry credentials that I’ve earned.</p>
+    <div style="display: flex; justify-content: center; margin-top: 1.5rem;">
+      <div style="background: #1e293b; color: #fff; padding: 1.5rem 2rem; border-radius: 10px; display: flex; align-items: center; gap: 1rem;">
+        <img src="images/cert.png" alt="Certification Badge" style="width: 60px; height: auto;" />
+        <strong>Data Engineer Associate</strong>
+      </div>
+    </div>
+  </section>
+  <section id="courses">
+    <h2>DataCamp Course Completion</h2>
+    <p>Take a look at all the courses I’ve completed on DataCamp.</p>
+  
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+      <!-- Courses -->
+      <div style="flex: 1; min-width: 250px; background: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+        <h4>Courses</h4>
+        <ul style="padding-left: 1rem;">
+          <li>💡 Introduction to Python</li>
+          <li><sub>SQL</sub> Introduction to SQL</li>
+          <li><sub>SQL</sub> Intermediate SQL</li>
+          <li>💡 Introduction to Python for Developers</li>
+        </ul>
+        <p style="color: #3b82f6; cursor: pointer; font-weight: 600;">Show More <span>&#8595;</span></p>
+      </div>
+  
+      <!-- Tracks -->
+      <div style="flex: 1; min-width: 250px; background: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+        <h4>Tracks</h4>
+        <ul style="padding-left: 1rem;">
+          <li>💡 Data Engineer</li>
+          <li>💡 Python Fundamentals</li>
+          <li>💡 Python Programming</li>
+          <li>💡 Importing & Cleaning Data</li>
+        </ul>
+        <p style="color: #3b82f6; cursor: pointer; font-weight: 600;">Show More <span>&#8595;</span></p>
+      </div>
+  
+      <!-- Projects -->
+      <div style="flex: 1; min-width: 250px; background: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+        <h4>Projects</h4>
+        <ul style="padding-left: 1rem;">
+          <li><sub>SQL</sub> Introduction to Notebook Projects</li>
+          <li>💡 Consolidating Employee Data</li>
+          <li><sub>SQL</sub> Analyzing Industry Carbon Emissions</li>
+          <li><sub>SQL</sub> Analyzing Students' Mental Health</li>
+        </ul>
+        <p style="color: #3b82f6; cursor: pointer; font-weight: 600;">Show More <span>&#8595;</span></p>
+      </div>
+    </div>
+  </section>
+  <section id="experience">
+    <h2>My Work Experience</h2>
+    <p>Where I’ve interned and worked during my career.</p>
+  
+    <div style="background: #3b82f6; color: #fff; padding: 1rem 1.5rem; border-radius: 10px; margin-top: 2rem;">
+      <strong>NTT DATA | NOV 2023 – PRESENT</strong>
+      <p style="margin: 0.5rem 0 0;">Data Engineer</p>
+    </div>
+  </section>
+      
+
+  <footer>
+    &copy; 2025 Ramon Mufutau. All rights reserved.
+  </footer>
+</body>
+</html>
