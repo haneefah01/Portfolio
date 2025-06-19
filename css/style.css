@@ -236,4 +236,31 @@
       font-size: 14px;
       color: #666;
     }
-  
+  @media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    background: #fff;
+    padding: 1rem;
+  }
+
+  .hero {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 2rem 1rem 4rem;
+  }
+
+  .tech-stack {
+    position: static;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .highlight-track {
+    flex-direction: column;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+}
