@@ -1,0 +1,36 @@
+# 🌐 Ramon A. Mufutau | Personal Portfolio Website
+
+Welcome to my personal portfolio! This website showcases my background as a PhD candidate, certified Data Engineer, and a passionate software developer. It includes my work experience, certifications, course completions, and selected projects.
+
+---
+
+## 🔍 About Me
+
+I’m currently a PhD candidate in Computational Analysis and Modeling at Louisiana Tech University. With a strong foundation in Mathematics, Statistics, and Computer Science, I specialize in:
+
+- Data Engineering & Analytics
+- FullStack Javascript developer
+- Python, SQL, and Cloud Technologies (Azure)
+
+---
+
+## 🚀 Live Demo
+
+👉 [Click here to view the live website](https://your-portfolio-link.com)
+
+---
+
+## 📁 Project Structure
+
+```bash
+.
+├── index.html              # Main portfolio file
+├── css/
+│   └── style.css           # Custom styles
+├── js/
+│   └── main.js             # JS interactions (if applicable)
+├── images/                 # Profile, certification, and project images
+└── projects/
+    ├── bitcoin.html
+    ├── data-engineer.html
+    └── ...
