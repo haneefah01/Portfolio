@@ -36,8 +36,23 @@
      <a href="https://learn.microsoft.com/en-us/training/fabric/" target="_blank" data-label=" Fabric">
      <i class="fas fa-cubes"></i></a>
     </div>
+    <!-- Mobile Technologies Toggle -->
+    <div class="mobile-tech-container">
+    <button class="mobile-tech-toggle" onclick="toggleMobileTech()">
+    <i class="fas fa-bars"></i> 
+    </button>
+    <div class="mobile-tech-icons" id="mobileTechIcons">
+    <a href="#" data-label="Python"><i class="fab fa-python"></i></a>
+    <a href="#" data-label=""><i class="fas fa-database"></i></a>
+    <a href="#" data-label=""><i class="fas fa-code-branch"></i></a>
+    <a href="#" data-label=""><i class="fas fa-project-diagram"></i></a>
+    <a href="#" data-label=""><i class="fas fa-network-wired"></i></a>
+    <a href="#" data-label=""><i class="fas fa-cubes"></i></a>
+    </div>
+   </div>
+
     <img src="images/profile.jpg" alt="Profile" class="profile-img">
-    <h1 class="name">Ramon A. Mufutau <span class="certified">CERTIFIED</span></h1>
+    <h3 class="name">Ramon A. Mufutau </h3>
     <p class="role">PhD Compuational Analysis and Modelling | Azure Data Engineer | Fullstack Javascript Developer</p>
   </header>
   <div class="highlight-container">
@@ -68,13 +83,13 @@
     <h2 aliGn="center">My Work</h2>
     <h3 aliGn="center">Take a look at my latest work.</h3>
     <div class="work-grid">
-      <a href="https://example.com/bitcoin-project" class="work-card light" target="_blank">
-        <span class="badge datalab">DataLab</span>
-        <h3>Exploring the Bitcoin Cryptocurrency Market</h3>
+      <a href="https://github.com/haneefah01/matcityedu" class="work-card light" target="_blank">
+        <span class="badge datalab">project</span>
+        <h3>Matcity Educational Consult</h3>
       </a>
-      <a href="https://example.com/data-engineer" class="work-card dark" target="_blank">
-        <span class="badge track">Track</span>
-        <h3>Data Engineer</h3>
+      <a href="https://github.com/haneefah01/SQLProject-1" class="work-card dark" target="_blank">
+        <span class="badge track">project</span>
+        <h3>Retail Sales Insights</h3>
       </a>
       <a href="https://example.com/data-manipulation" class="work-card light" target="_blank">
         <span class="badge track">Track</span>
@@ -203,6 +218,12 @@
     &copy; 2025 Ramon Mufutau. All rights reserved.
   </footer>
 
+<script>
+  function toggleMobileTech() {
+    const el = document.getElementById("mobileTechIcons");
+    el.classList.toggle("show");
+  }
+</script>
 
 
 

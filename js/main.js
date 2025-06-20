@@ -43,3 +43,9 @@
       navLinks.classList.remove("show");
     });
   });
+
+  function toggleTechStack() {
+    const stack = document.getElementById("techStackMobile");
+    stack.classList.toggle("show");
+  }
+

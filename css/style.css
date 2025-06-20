@@ -423,3 +423,154 @@ footer {
 .hidden {
   display: none;
 }
+/* Default layout: technologies to the top-right */
+.tech-stack {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  text-align: right;
+}
+
+/* Mobile layout: move technologies under the image */
+@media (max-width: 768px) {
+  .tech-stack {
+    position: static;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+/* Desktop default tech-stack remains unchanged */
+.tech-stack {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  text-align: right;
+}
+
+/* Mobile toggle menu */
+.tech-toggle {
+  display: none;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.tech-header {
+  background-color: #003366;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.tech-stack-mobile {
+  display: none;
+  margin-top: 0.5rem;
+}
+
+.tech-stack-mobile.show {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tech-stack-mobile a {
+  background: white;
+  color: #003366;
+  padding: 0.5rem;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* Only show toggle on small screens */
+@media (max-width: 768px) {
+  .tech-stack {
+    display: none;
+  }
+  .tech-toggle {
+    display: block;
+  }
+}
+/* Default: Hide mobile tech */
+.mobile-tech-container {
+  display: none;
+}
+
+/* Only show on mobile */
+@media (max-width: 768px) {
+  .mobile-tech-container {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    text-align: right;
+    display: block;
+  }
+
+  .mobile-tech-toggle {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .mobile-tech-icons {
+    display: none;
+    margin-top: 0.0rem;
+    background: white;
+    padding: 0.0rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .mobile-tech-icons.show {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.0rem;
+  }
+
+  .mobile-tech-icons a {
+    color: #003366;
+    background: #f0f4f8;
+    border-radius: 50%;
+    padding: 0.6rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    position: relative;
+    transition: transform 0.2s;
+  }
+
+  .mobile-tech-icons a:hover {
+    transform: scale(1.1);
+  }
+
+  .mobile-tech-icons a::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    white-space: nowrap;
+    color: #333;
+  }
+
+  /* Hide desktop version of tech stack */
+  .tech-stack {
+    display: none;
+  }
+}
