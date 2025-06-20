@@ -3,14 +3,14 @@ function toggleMenu() {
   navLinks.classList.toggle('show');
 }
 
-// Close menu when any nav link is clicked (mobile only)
+// Close the mobile menu ONLY on small screens after clicking a link
 document.addEventListener("DOMContentLoaded", function () {
-  const navLinks = document.getElementById('navLinks');
+  const navLinks = document.getElementById("navLinks");
   const links = navLinks.querySelectorAll("a");
 
   links.forEach(link => {
-    link.addEventListener("click", () => {
-      if (window.innerWidth <= 768) {
+    link.addEventListener("click", function () {
+      if (window.innerWidth <= 768 && navLinks.classList.contains("show")) {
         navLinks.classList.remove("show");
       }
     });
