@@ -1,22 +1,22 @@
 
   const extraCourses = {
     math: [
-      '📘 Discrete Mathematics',
-      '📐 Calculus I & II',
-      '📊 Advanced Linear Algebra',
-      '📏 Real Analysis'
+      ' Discrete Mathematics',
+      ' Calculus I & II',
+      'Advanced Linear Algebra',
+      'Real Analysis'
     ],
     stats: [
-      '📈 Regression Modeling',
-      '📊 Time Series Analysis',
-      '📉 Multivariate Stats',
-      '🧠 Machine Learning Basics'
+      'Regression Modeling',
+      'Time Series Analysis',
+      'Multivariate Stats',
+      'Machine Learning Basics'
     ],
     cs: [
-      '💻 Data Structures',
-      '🖥️ Algorithms in Python',
-      '🧪 Software Testing',
-      '🧬 Data Science Capstone'
+      'Data Structures',
+      'Algorithms in Python',
+      'Software Testing',
+      ' Data Science Capstone'
     ]
   };
 
