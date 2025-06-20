@@ -72,7 +72,8 @@ nav .logo {
   position: relative;
   background: linear-gradient(135deg, #3c8ce7, #00eaff);
   color: white;
-  margin: 15 15%;
+  margin-left: 15%;
+  margin-right: 15%;
   padding: 3rem 2rem 6rem;
   text-align: center;
   overflow: hidden;
@@ -112,8 +113,18 @@ nav .logo {
   top: 1rem;
   right: 1rem;
   text-align: right;
+  align-items: center;
 }
 
+/* .tech-stack {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+} */
 .tech-stack p {
   margin: 0;
   font-weight: bold;
@@ -217,7 +228,7 @@ nav .logo {
 }
 
 section {
-  padding: 20px;
+  padding: 35px;
   max-width: 1000px;
   margin: auto;
 }
@@ -408,4 +419,7 @@ footer {
   .nav-links.show {
     display: flex;
   }
+}
+.hidden {
+  display: none;
 }
