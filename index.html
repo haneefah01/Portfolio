@@ -11,7 +11,7 @@
   
 </head>
 <body>
- <nav>
+<nav class="navbar">
   <div class="logo">Ramon Mufutau</div>
   <button class="hamburger" id="hamburger">&#9776;</button>
   <ul class="nav-links" id="navLinks">
@@ -180,17 +180,17 @@
   </footer>
 
 <script>
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
 
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
   });
 
-  // Close dropdown on click of any nav item
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('show');
+  // Auto close menu after clicking any link
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
     });
   });
 </script>

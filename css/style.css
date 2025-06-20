@@ -6,29 +6,68 @@ body {
   scroll-behavior: smooth;
 }
 
-nav {
+nav.navbar {
   background: #fff;
-  position: sticky;
-  top: 0;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
   z-index: 1000;
 }
 
-nav ul {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
+nav .logo {
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
-nav ul li a {
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #003366;
+  cursor: pointer;
+}
+
+/* Default nav list */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
   text-decoration: none;
   color: #003366;
   font-weight: 600;
 }
 
+/* MOBILE STYLE */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
 .hero {
   position: relative;
   background: linear-gradient(135deg, #3c8ce7, #00eaff);
