@@ -291,50 +291,35 @@ footer {
     display: flex;
   }
 
-  .hamburger {
-    display: block;
-  }
-
-  .hero {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    padding: 2rem 1rem 4rem;
-  }
-
-  .tech-stack {
-    position: static;
-    margin-top: 1rem;
-    text-align: center;
-  }
-
-  .highlight-track {
-    flex-direction: column;
-  }
-
-  .work-grid {
-    grid-template-columns: 1fr;
-  }
 }
+/* Hamburger hidden by default */
 .hamburger {
   display: none;
   font-size: 1.5rem;
   background: none;
   border: none;
   cursor: pointer;
+  color: #003366;
 }
 
+/* MOBILE view adjustments */
 @media (max-width: 768px) {
+  nav {
+    flex-direction: row;
+    align-items: center;
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
-    background: #fff;
+    background: white;
     position: absolute;
     top: 60px;
-    right: 2rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 8px;
+    right: 1.5rem;
     padding: 1rem;
-    z-index: 100;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 99;
   }
 
   .nav-links.show {
@@ -345,4 +330,3 @@ footer {
     display: block;
   }
 }
-

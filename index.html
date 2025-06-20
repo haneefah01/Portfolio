@@ -182,22 +182,22 @@
     &copy; 2025 Ramon Mufutau. All rights reserved.
   </footer>
 
-  <script>
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
+ <script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
 
-  // Toggle dropdown
   hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('show');
   });
 
-  // Close dropdown when a link is clicked
+  // Close dropdown on nav item click
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('show');
     });
   });
 </script>
+
 
 </body>
 </html>
